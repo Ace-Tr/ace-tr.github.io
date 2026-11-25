@@ -13,7 +13,7 @@
 <meta property="og:description" content="Selected projects by Asa Tribble.">
 <meta name="twitter:card" content="summary">
 <!-- After publishing, add: <link rel="canonical" href="https://your-username.github.io/"> and og:url -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d6b4f'/%3E%3Ctext x='16' y='22.5' font-family='Arial,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d6b4f'/%3E%3Ctext x='16' y='22.5' font-family='Arial,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -112,11 +112,13 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
       <nav aria-label="Primary">
         <a href="https://github.com/Ace-Tr">GitHub</a>
         <!--a href="mailto:you@example.com">Email</a-->
+        <a href="www.linkedin.com/in/asa-tribble-561329375">LinkedIn</a>
+        <a href="https://github.com/GalacticcGames">Galacticc Games GitHub</a>
         <a href="#about">About</a>
       </nav>
     </div>
     <h1>Projects & Experience.</h1>
-    <p class="intro">I’m a developer who likes small, useful tools and well-kept codebases. Here’s a selection of projects, newest first.</p>
+    <p class="intro">I'm a developer that has been making independent projects and experiments for fun and for my business for many years. Here’s a selection of recent non-proprietary projects, newest first. </p>
   </header>
 
   <main>
@@ -128,7 +130,12 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 
   <footer id="about">
     <div class="row">
-      <span>About: replace this with two or three sentences on who you are and what you’re looking for.</span>
+      <span>
+        About: I am a software and ML/AI developer who has been programming from middle school all the way through my Bachelors Degree in Artificial Intelligence Science. 
+        I started my own game engine plugin development company, Galacticc Games, in 2024 to officially release and monetize some of my projects along the way. 
+        I have experimented with many branches of computer science, from web development and custom desktop applications and APIs, to data science and financial trading algorithms. 
+        This is my centralized Github account, all of my project's repositories are separated into their own accounts by category, one for Galacticc Games, one for my college, one for my web development, and so on.
+      </span>
       <span>© <span id="yr"></span> Asa Tribble · <a href="https://github.com/Ace-Tr">github.com/Ace-Tr</a></span>
     </div>
   </footer>
@@ -139,36 +146,40 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
    title, year, description, tags (any labels you like),
    repo (GitHub URL), demo (live URL, optional). */
 const PROJECTS = [
-  // {
-  //   title: "Project One",
-  //   year: 2025,
-  //   description: "One or two sentences on what it does and why it exists.",
-  //   tags: ["Web", "JavaScript"],
-  //   repo: "https://github.com/your-username/project-one",
-  //   demo: "https://your-username.github.io/project-one"
-  // },
-  // {
-  //   title: "Project Two",
-  //   year: 2024,
-  //   description: "A command-line tool that does one thing well. Mention the problem it solves.",
-  //   tags: ["CLI", "Python"],
-  //   repo: "https://github.com/your-username/project-two"
-  // },
-  // {
-  //   title: "Project Three",
-  //   year: 2024,
-  //   description: "A data project, a game, a library: whatever you’re proudest of.",
-  //   tags: ["Data", "Python"],
-  //   repo: "https://github.com/your-username/project-three",
-  //   demo: "https://example.com"
-  // },
-  // {
-  //   title: "Project Four",
-  //   year: 2023,
-  //   description: "Add as many as you like. Entries sort by year automatically.",
-  //   tags: ["Web", "TypeScript"],
-  //   repo: "https://github.com/your-username/project-four"
-  // }
+  {
+    title: "Reselling Calculator",
+    year: 2026,
+    description: "My goal was to make an actual useful website using AI in one week, from idea to launch. This website is a reselling calculator, that calculates profits and fees of different items on different platforms such as eBay, Amazon, Shopify, etc. with the development all AI acceleerated.",
+    tags: ["Web", "SEO", "React"],
+    demo: "https://resellingcalc.com/"
+  },
+  {
+    title: "EiV - Unreal Engine Linear Algebra",
+    year: 2025,
+    description: "EiV is a C++ and Blueprint Library for Unreal Engine that is powered by the Eigen library. Eigen is a free, third party linear algebra library for C++ that comes built-in to Unreal Engine. This plugin is meant to save you the hassle of trying to include Eigen in your own projects, to help the conversion between Unreal Engine and Eigen types be a bit smoother, and to provide an easy interface to Eigen functionality in Blueprints!",
+    tags: ["C++", "Unreal Engine", "Open-Source", "Mathematics"],
+    repo: "https://github.com/GalacticcGames/EiV",
+    demo: "https://www.youtube.com/watch?v=HEuoAquiClk
+  },
+  {
+    title: "Enhancing LLM Legal & Regulatory Reasoning",
+    year: 2026,
+    description: "A work in progress. As a project for one of my AI classes, my goal is to fix some of the current pitfalls of LLM legal and regulatory reasoning, primarily the 49% hallucination rate. Utilizing a vector database representing relations between legal objects, this can serve as context for the LLM. Results pending.",
+    tags: ["AI", "LLM", "Database"],
+  },
+  {
+    title: "Streamline Spline Emission",
+    year: 2025,
+    description: "Streamline is a collection of many different VFX Graph subgraphs and functions connected with a component that helps you use splines in your VFX in the fastest and simplest way possible. This system is designed for maximum customizability and allows you to streamline your workflow and create anything with the infinite power of splines. This was also made for Unreal Engine.",
+    tags: ["Unity", "Unreal Engine", "C#", "C++","Mathematics"],
+    demo: "https://assetstore.unity.com/packages/tools/particles-effects/streamline-spline-emission-for-unity-303808?srsltid=AYCX9vIdx5XwcNyMcKElT6xC52jO5A_iZLuygJgVboppK5MaLxgoT7HR#description"
+  },
+  {
+    title: "Digital Audio Workstation (DAW) Wrapper Launcher",
+    year: 2026,
+    description: "Work in porgress. The goal is to be able to create a master control appliation for DAW software such as Ableton Live and FL Studio that can control them from a centralized external app. The main app would be in C++ and the CLI + API, as well as the interfacing to the underlying DAWs, is driven by Python.",
+    tags: ["C++","Python","API","CLI"],
+  }
 ];
 /* ---------------------------------------------- */
 
