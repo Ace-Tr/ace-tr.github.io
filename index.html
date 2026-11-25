@@ -1,1 +1,232 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asa Tribble | Projects</title>
+<meta name="description" content="Selected projects by Asa Tribble.">
+<meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101815" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Asa Tribble - Projects">
+<meta property="og:description" content="Selected projects by Asa Tribble.">
+<meta name="twitter:card" content="summary">
+<!-- After publishing, add: <link rel="canonical" href="https://your-username.github.io/"> and og:url -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d6b4f'/%3E%3Ctext x='16' y='22.5' font-family='Arial,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f4f1; --surface:#e7ebe6; --ink:#16231e; --muted:#5d6b64;
+  --line:#c9d1ca; --accent:#1d6b4f; --accent-ink:#ffffff;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+:root:not([data-theme="light"]){color-scheme:light dark}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#101815; --surface:#18221e; --ink:#e8eee9; --muted:#97a69d;
+    --line:#2b3a33; --accent:#6fd0a3; --accent-ink:#0b1410;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101815; --surface:#18221e; --ink:#e8eee9; --muted:#97a69d;
+  --line:#2b3a33; --accent:#6fd0a3; --accent-ink:#0b1410;
+}
+*{box-sizing:border-box}
+::selection{background:var(--accent);color:var(--accent-ink)}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--ink);color:var(--bg);padding:.5rem .9rem;border-radius:4px;z-index:10;text-decoration:none}
+.skip:focus{top:1rem}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+
+header{padding:3.5rem 0 2.5rem}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:4rem;font-size:.95rem}
+.top nav{display:flex;gap:1.25rem}
+.top a{text-decoration:none;color:var(--muted)}
+.top a:hover{color:var(--ink)}
+.top .me{color:var(--ink);font-weight:500}
+h1{font:700 clamp(2.4rem,7vw,4.5rem)/1.02 var(--head);letter-spacing:-.025em;margin:0 0 1.25rem;max-width:16ch}
+.intro{max-width:36rem;color:var(--muted);font-size:1.125rem;margin:0}
+
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;padding:1.25rem 0;border-bottom:1px solid var(--ink);position:sticky;top:0;background:var(--bg);z-index:2}
+.filters button{font:500 .9rem var(--body);padding:.35rem .85rem;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.filters button:hover{border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+.count{margin-left:auto;color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
+.projects{list-style:none;margin:0;padding:0}
+.project{display:grid;grid-template-columns:4.5rem 1fr auto;gap:0 1.5rem;padding:1.75rem 0;border-bottom:1px solid var(--line)}
+.project[hidden]{display:none}
+.year{color:var(--muted);font-size:.95rem;padding-top:.55rem;font-variant-numeric:tabular-nums}
+.project h2{font:700 clamp(1.5rem,3.6vw,2.25rem)/1.15 var(--head);letter-spacing:-.015em;margin:0 0 .5rem}
+.project h2 a{text-decoration:none;background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 .12em no-repeat;transition:background-size .25s}
+.project h2 a:hover{background-size:100% .12em}
+.project p{margin:0 0 .85rem;max-width:38rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.tags li{font-size:.82rem;padding:.1rem .6rem;border-radius:4px;background:var(--surface);color:var(--ink)}
+.links{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;padding-top:.55rem;font-size:.95rem;white-space:nowrap}
+.links a{color:var(--accent)}
+.empty{padding:2rem 0;color:var(--muted)}
+.links a{text-underline-offset:.2em}
+.links a:hover{color:var(--ink)}
+.top a:focus-visible,.top .me:focus-visible{outline-offset:4px}
+
+/* one entrance moment: the header settles in on load */
+@keyframes settle{from{opacity:0;transform:translateY(.6rem)}to{opacity:1;transform:none}}
+h1,.intro{animation:settle .6s cubic-bezier(.2,.7,.2,1) both}
+.intro{animation-delay:.12s}
+
+footer{padding:3rem 0 4rem;color:var(--muted);font-size:.95rem}
+footer a{color:var(--ink)}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+
+@media (max-width:40rem){
+  .project{grid-template-columns:1fr;gap:.25rem}
+  .year{padding:0}
+  .links{flex-direction:row;align-items:flex-start;gap:1rem;padding:.5rem 0 0}
+  .top{margin-bottom:2.5rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project h2 a{transition:none}h1,.intro{animation:none}}
+@media print{
+  :root{--bg:#fff;--ink:#000;--muted:#333;--line:#bbb;--surface:#eee;--accent:#000}
+  .filters,.top nav,.skip{display:none}
+  .project{break-inside:avoid}
+  .links a::after{content:" (" attr(href) ")";font-size:.75rem;color:#333}
+  .links{white-space:normal}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#projects">Skip to projects</a>
+<div class="wrap">
+  <header id="top">
+    <div class="top">
+      <a class="me" href="#top">Asa Tribble</a>
+      <nav aria-label="Primary">
+        <a href="https://github.com/Ace-Tr">GitHub</a>
+        <!--a href="mailto:you@example.com">Email</a-->
+        <a href="#about">About</a>
+      </nav>
+    </div>
+    <h1>Projects & Experience.</h1>
+    <p class="intro">I’m a developer who likes small, useful tools and well-kept codebases. Here’s a selection of projects, newest first.</p>
+  </header>
+
+  <main>
+    <div class="filters" id="filters" role="group" aria-label="Filter projects by tag"></div>
+    <noscript><p class="empty">Projects are loaded with JavaScript. Please enable it, or browse <a href="https://github.com/Ace-Tr?tab=repositories">my repositories on GitHub</a> for what may be centralized under this account.</p></noscript>
+    <ol class="projects" id="projects"></ol>
+    <p class="empty" id="empty" hidden>No projects match that tag.</p>
+  </main>
+
+  <footer id="about">
+    <div class="row">
+      <span>About: replace this with two or three sentences on who you are and what you’re looking for.</span>
+      <span>© <span id="yr"></span> Asa Tribble · <a href="https://github.com/Ace-Tr">github.com/Ace-Tr</a></span>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ---------- EDIT YOUR PROJECTS HERE ----------
+   title, year, description, tags (any labels you like),
+   repo (GitHub URL), demo (live URL, optional). */
+const PROJECTS = [
+  // {
+  //   title: "Project One",
+  //   year: 2025,
+  //   description: "One or two sentences on what it does and why it exists.",
+  //   tags: ["Web", "JavaScript"],
+  //   repo: "https://github.com/your-username/project-one",
+  //   demo: "https://your-username.github.io/project-one"
+  // },
+  // {
+  //   title: "Project Two",
+  //   year: 2024,
+  //   description: "A command-line tool that does one thing well. Mention the problem it solves.",
+  //   tags: ["CLI", "Python"],
+  //   repo: "https://github.com/your-username/project-two"
+  // },
+  // {
+  //   title: "Project Three",
+  //   year: 2024,
+  //   description: "A data project, a game, a library: whatever you’re proudest of.",
+  //   tags: ["Data", "Python"],
+  //   repo: "https://github.com/your-username/project-three",
+  //   demo: "https://example.com"
+  // },
+  // {
+  //   title: "Project Four",
+  //   year: 2023,
+  //   description: "Add as many as you like. Entries sort by year automatically.",
+  //   tags: ["Web", "TypeScript"],
+  //   repo: "https://github.com/your-username/project-four"
+  // }
+];
+/* ---------------------------------------------- */
+
+const list = document.getElementById("projects");
+const filters = document.getElementById("filters");
+const empty = document.getElementById("empty");
+const sorted = [...PROJECTS].sort((a, b) => b.year - a.year);
+const el = (tag, attrs = {}, text) => {
+  const n = document.createElement(tag);
+  Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
+  if (text) n.textContent = text;
+  return n;
+};
+
+sorted.forEach(p => {
+  const li = el("li", { class: "project" });
+  li.dataset.tags = p.tags.join("|");
+
+  li.append(el("div", { class: "year" }, p.year));
+
+  const body = el("div");
+  const h2 = el("h2");
+  h2.append(el("a", { href: p.demo || p.repo }, p.title));
+  body.append(h2, el("p", {}, p.description));
+  const tags = el("ul", { class: "tags", "aria-label": "Tags" });
+  p.tags.forEach(t => tags.append(el("li", {}, t)));
+  body.append(tags);
+  li.append(body);
+
+  const links = el("div", { class: "links" });
+  if (p.repo) links.append(el("a", { href: p.repo, "aria-label": "Source code for " + p.title }, "Source"));
+  if (p.demo) links.append(el("a", { href: p.demo, "aria-label": "Live demo of " + p.title }, "Live demo"));
+  li.append(links);
+
+  list.append(li);
+});
+
+const count = el("span", { class: "count", role: "status" });
+const setCount = n => { count.textContent = n + (n === 1 ? " project" : " projects"); };
+document.getElementById("yr").textContent = new Date().getFullYear();
+const allTags = [...new Set(sorted.flatMap(p => p.tags))].sort();
+["All", ...allTags].forEach((t, i) => {
+  const b = el("button", { type: "button", "aria-pressed": i === 0 ? "true" : "false" }, t);
+  b.addEventListener("click", () => {
+    filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    let shown = 0;
+    list.querySelectorAll(".project").forEach(li => {
+      const match = t === "All" || li.dataset.tags.split("|").includes(t);
+      li.hidden = !match;
+      if (match) shown++;
+    });
+    empty.hidden = shown > 0;
+    setCount(shown);
+  });
+  filters.append(b);
+});
+setCount(sorted.length);
+filters.append(count);
+</script>
+</body>
+</html>
